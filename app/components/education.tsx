@@ -1,5 +1,5 @@
-export default function Education(props:number) {
-
+export default function Education(props:{"key":string}) {
+console.log(props)
  
 
 
@@ -10,7 +10,8 @@ export default function Education(props:number) {
     return (
       <div>
         
-MSC
+MSC 
+{props.key}
     
   
           </div>

@@ -8,9 +8,9 @@ const [activetab,setActivetab]=useState(0)
 const tabsvalue=["Education","Skill","Project"];
 
 //const contents=["Content 1",
-const contents=[<Education/>,
-<Skills/>,
-<Project/>
+const contents=[<Education key="1"/>,
+<Skills key="2"/>,
+<Project key="3"/>
 
 ]
 
