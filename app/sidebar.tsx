@@ -2,7 +2,7 @@ import Image from "next/image"
 import img from "./butterfly1.jpg"
 
 export default function Sidebar() {
-  Image
+ 
       return (
         <div className="h-screen flex flex-col items-center p-3">
            <p>

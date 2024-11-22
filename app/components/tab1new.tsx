@@ -1,11 +1,16 @@
 import { useState } from "react";
+import Education from "./education";
+import Skills from "./skills";
+import Project from "./project";
 
 export default function Tab1new() {
 const [activetab,setActivetab]=useState(0)
-const tabsvalue=["tab1","tab2","tab3"];
-const contents=["Content0",
-"Content 1",
-"Content 2"
+const tabsvalue=["Education","Skill","Project"];
+
+//const contents=["Content 1",
+const contents=[<Education/>,
+<Skills/>,
+<Project/>
 
 ]
 
@@ -14,21 +19,26 @@ const contents=["Content0",
       <div className="mt-5">
         <ol>
         
-        <div className="bg-orange-300 hover:bg-orange-600 flex gap-4 justify-center items-center ">
-{tabsvalue.map(((tab,i)=><button key={`tab ${i}`} className={`px-4 border ${activetab===i ? "bg-blue-800":"bg-blue-200"}py-3 hover:bg-blue-500`}>{tab}</button>))}
-          
+        <div className="bg-orange-300 hover:bg-orange-600 flex  justify-evenly items-center ">
+{tabsvalue.map(((tab,i)=><button 
+onClick={()=> setActivetab(i)}   
+key={`tab ${i}`} 
+className={`px-4 flex-1 border ${activetab===i ? "bg-blue-800 text-white":"bg-blue-200"} py-3 hover:bg-blue-500`}>
+  {tab}</button>))}
+       
         </div>
         </ol>
 
         <div className="flex flex-col mx-auto">
           {
-            contents && contents.map((content,i)=>
-              <div key={`content ${i}`}>Content</div>
+            contents && contents.map((content,i)=>{
+              if(activetab===i){
+              return <div className="px-4 py-4 border h-60" key={`content ${i}`}>{content}</div>
+              }
+              return null
+            }
             )}
-<div>content</div>
-<div>content</div>
-<div>content</div>
-<div>content</div>
+
 
         </div>
         </div>
